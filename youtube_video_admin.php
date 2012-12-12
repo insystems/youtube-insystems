@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Youtube Vídeos InSystems
-Plugin URI: 
+Plugin URI:
 Description: Plugin para integrar vídeos do Youtube com os seus Posts, ele relaciona os vídeos aos posts via Tags.
 Version: 1.0
 Author: InSystems
@@ -11,8 +11,8 @@ Author URI: http://insystems.com.br
 add_action('init', 'in_youtubevideos_post_type_init' );
 add_action('admin_menu', 'add_video_box');
 add_action('save_post', 'video_save_postdata' );
-add_action('wp_footer', 'add_css');
-add_action('wp_footer', 'add_js');
+add_action('wp_footer', 'add_css_in_footer');
+add_action('wp_footer', 'add_javascript_in_footer');
 
 function in_youtubevideos_post_type_init($paramns) {
 	$labels = array(
@@ -74,7 +74,7 @@ function video_box() {
 						width: 100%;
 						outline: 0;'
 		);
-	
+
 	include __DIR__ . '/templates/input_text.ctp';
 }
 
@@ -86,14 +86,14 @@ function video_save_postdata() {
 
 function save_metadata_youtube(array $data) {
 	update_post_meta($data['post_ID'], 'video-youtube',  trim($data['video-youtube']));
-} 
+}
 
-function add_css() {
+function add_css_in_footer() {
 	echo '<link rel="stylesheet" href="' . get_bloginfo('url') . '/wp-content/plugins/youtube-insystems/templates/css/youtube-insystems.css' . '" type="text/css" media="screen" />';
 	echo '<link rel="stylesheet" href="' . get_bloginfo('url') . '/wp-content/plugins/youtube-insystems/templates/css/modal-basic.css' . '" type="text/css" media="screen" />';
 }
 
-function add_js() {
+function add_javascript_in_footer() {
 	echo '<script type="text/javascript" src="' . get_bloginfo('url') . '/wp-content/plugins/youtube-insystems/templates/js/jquery.simplemodal.js' . '"></script>';
 	echo '<script type="text/javascript" src="' . get_bloginfo('url') . '/wp-content/plugins/youtube-insystems/templates/js/modal-basic.js' . '"></script>';
 }
