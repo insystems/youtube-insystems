@@ -1,0 +1,43 @@
+div.middle {
+	padding: 10px;
+	clear: both;
+}
+
+div.middle h2 {
+	color: orange;
+    font-size: 30px;
+    margin-bottom: 30px;
+    height: 34px;
+}
+
+ul#youtube_videos {
+	clear: both;
+	margin-left: 6px;
+}
+
+	ul#youtube_videos li {
+		background: none repeat scroll 0 0 #111111;
+	    border: 1px solid #222222;
+	    float: left;
+	    height: 126px;
+	    margin-bottom: 30px;
+	    margin-right: 12px;
+	    padding: 6px;
+	    text-align: center;
+	    vertical-align: middle;
+	    width: 210px;
+	}
+	
+		
+		ul#youtube_videos li h2 {
+			color: white;
+			font-size: 14px;
+			margin-bottom: 0px !important;
+		}
+		
+		ul#youtube_videos li img.play{
+			left: 0;
+		    position: relative;
+		    z-index: 999;
+		    top: 25px;
+		}
